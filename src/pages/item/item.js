@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { itemsData } from '../../assets/itemsData';
 
 import './item.css';
@@ -16,16 +17,21 @@ export class Item extends Component {
     const itemInfo = itemsData.find(item => item.id === this.state.itemId);
     this.setState({
         itemInfo: itemInfo,
-    })
+    }, () => {
+        if (this.state.itemInfo.specialPrice) {
+            window.ga('send', 'pageview', {
+                'dimension1':  `${this.state.itemInfo.discount}% off`
+            });
+        }
+    });
   }
 
   render() {
     return (
-      <div className='products-warpper'>
-        <h1>{this.state.itemInfo.name}</h1>
-        {this.state.itemInfo.specialPrice && <div>:D</div>}
-        <p>{this.state.itemInfo.description}</p>
+      <div className='item-warpper'>
+        <ProductCard item={this.state.itemInfo}/>
       </div>
+
     );
   }
 }

@@ -24,7 +24,7 @@ export class Products extends Component {
   render() {
     return (
       <div className='products-warpper'>
-        <h1>Products</h1>
+        <h1 className='products-headline'>Products</h1>
         <hr/>
         <div className='products-list'>
           {this.renderCards()}

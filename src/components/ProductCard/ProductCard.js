@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import facebookIcon from '../../assets/images/facebook.png';
 
 import './ProductCard.css';
 
@@ -8,6 +9,7 @@ export class ProductCard extends Component {
     super(props);
 
     this.addToCart= this.addToCart.bind(this);
+    this.shareWithFacebook= this.shareWithFacebook.bind(this);
   }
 
   addToCart() {
@@ -19,15 +21,30 @@ export class ProductCard extends Component {
     });
   }
 
+  shareWithFacebook() {
+    alert(`${this.props.item.name} has shared to facebook.`)
+  }
+
   render() {
+    const style = {
+      backgroundImage: `url(${this.props.item.thumbnail})`
+    }
+    const icon = {
+      backgroundImage: `url(${facebookIcon})`
+    }
     return (
       <div className='product-card'>
-        <Link to={`/products/${this.props.item.id}/`} params={{ data: this.props.item }}><p>{this.props.item.name}</p></Link>
-
-        <div>
-          <button className='product-facebook'>Facebook</button>
-          <button className='product-cart' onClick={this.addToCart}>Add to cart</button>
+        <div className='product-thumbnail' style={style}></div>
+        <div className='product-info'>
+          <p className='product-title'>
+            <Link to={`/products/${this.props.item.id}/`} params={{ data: this.props.item }}><span>{this.props.item.name}</span></Link>
+          </p>
+          <div className='product-buttons'>
+            <button className='product-cart' onClick={this.addToCart}>Add to cart</button>
+          </div>
         </div>
+        {this.props.item.specialPrice && <div className='product-label'>{`-${this.props.item.discount}%`}</div>}
+        <div onClick={this.shareWithFacebook} className='product-facebook' style={icon}></div>
       </div>
     );
   }
