@@ -1,0 +1,29 @@
+.home-container {
+    margin: 0 auto;
+    min-height: 100%;
+    width: 1170px;
+}
+
+.home-banner {
+    left: 50%;
+    padding: 22px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 600px;
+}
+
+.banner-text {
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 32px;
+    text-transform: uppercase;
+}
