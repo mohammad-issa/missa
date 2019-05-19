@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
+import { itemsData } from '../../assets/itemsData';
 
 import './products.css';
 
@@ -8,21 +9,15 @@ export class Products extends Component {
     super(props);
 
     this.state = {
-      products: [
-        {
-          name: 'Product 1'
-        }, {
-          name: 'Product 2'
-        }
-      ]
+      products: itemsData
     }
 
     this.renderCards = this.renderCards.bind(this);
   }
 
   renderCards() {
-    return this.state.products.map((item, index) => {
-      return <ProductCard key={index} item={item}/>
+    return this.state.products.map((item) => {
+      return <ProductCard key={item.id} item={item}/>
     })
   }
 

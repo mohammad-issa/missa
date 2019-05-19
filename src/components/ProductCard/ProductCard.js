@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 import './ProductCard.css';
 
@@ -21,7 +22,8 @@ export class ProductCard extends Component {
   render() {
     return (
       <div className='product-card'>
-        <p>{this.props.item.name}</p>
+        <Link to={`/products/${this.props.item.id}/`} params={{ data: this.props.item }}><p>{this.props.item.name}</p></Link>
+
         <div>
           <button className='product-facebook'>Facebook</button>
           <button className='product-cart' onClick={this.addToCart}>Add to cart</button>
