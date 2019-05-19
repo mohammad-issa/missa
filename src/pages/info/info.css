@@ -1,0 +1,11 @@
+.info-warpper {
+    width: 1170px;
+    margin: 0 auto;   
+}
+
+.info-warpper h1 {
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 42px;
+}
