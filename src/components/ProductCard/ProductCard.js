@@ -11,7 +11,7 @@ export class ProductCard extends Component {
 
   addToCart() {
     window['dataLayer'].push({
-      event: 'analyticsEvent',
+      event: 'areaClick',
       'event category': 'Template Area Interaction',
       'event action': 'Click',
       'event label': `${this.props.item.name} added to cart`
