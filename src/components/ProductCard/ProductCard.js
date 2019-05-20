@@ -26,6 +26,12 @@ export class ProductCard extends Component {
     alert(`${this.props.item.name} has shared to facebook.`)
   }
 
+  renderTags() {
+    return this.props.item.tags.map((tag, index) => {
+      return <span key={index}>{tag}</span>
+    })
+  }
+
   render() {
     const style = {
       backgroundImage: `url(${this.props.item.thumbnail})`
@@ -44,8 +50,9 @@ export class ProductCard extends Component {
             <button className='product-cart' onClick={this.addToCart}>Add to cart</button>
           </div>
         </div>
-        {this.props.item.specialPrice && <div className='product-label'>{`-${this.props.item.discount}%`}</div>}
+        {this.props.item.discount && <div className='product-label'>{`-${this.props.item.discount}%`}</div>}
         <div onClick={this.shareWithFacebook} className='product-facebook' style={icon}></div>
+        {this.props.standalone && <div className='tags-list'>tags: <div>{this.renderTags()}</div></div>}
       </div>
     );
   }
