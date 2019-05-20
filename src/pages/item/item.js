@@ -19,11 +19,11 @@ export class Item extends Component {
     this.setState({
       itemInfo: itemInfo,
     }, () => {
-      window['dataLayer'].push({
-        event: 'analyticsPV',
-        specialPrice: this.state.itemInfo.discount ? `${this.state.itemInfo.discount}%` : '',
-        tags: this.state.itemInfo.tags ? this.state.itemInfo.tags.join() : '',
-      });
+      // window['dataLayer'].push({
+      //   event: 'analyticsPV',
+      //   specialPrice: this.state.itemInfo.discount ? `${this.state.itemInfo.discount}%` : '',
+      //   tags: this.state.itemInfo.tags ? this.state.itemInfo.tags.join() : '',
+      // });
     });
   }
 
