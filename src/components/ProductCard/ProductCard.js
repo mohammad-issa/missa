@@ -13,12 +13,13 @@ export class ProductCard extends Component {
   }
 
   addToCart() {
-    window['dataLayer'].push({
-      event: 'areaClick',
-      'event category': 'Template Area Interaction',
-      'event action': 'Click',
-      'event label': `${this.props.item.name} added to cart`
-    });
+    console.log('added to cart');
+    // window['dataLayer'].push({
+    //   event: 'areaClick',
+    //   'event category': 'Template Area Interaction',
+    //   'event action': 'Click',
+    //   'event label': `${this.props.item.name} added to cart`
+    // });
   }
 
   shareWithFacebook() {

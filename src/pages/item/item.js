@@ -16,13 +16,7 @@ export class Item extends Component {
   componentWillMount() {
     const itemInfo = itemsData.find(item => item.id === this.state.itemId);
     this.setState({
-        itemInfo: itemInfo,
-    }, () => {
-        if (this.state.itemInfo.specialPrice) {
-            window.ga('send', 'pageview', {
-                'dimension1':  `${this.state.itemInfo.discount}% off`
-            });
-        }
+      itemInfo: itemInfo,
     });
   }
 
