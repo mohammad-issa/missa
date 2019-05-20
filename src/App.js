@@ -8,6 +8,16 @@ import { Info } from './pages/info/info'
 import { NotFound } from './pages/404/404'
 
 class App extends Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.loadScript = this.loadScript.bind(this);
+  // }
+  componentWillMount() {
+    // const dataLayer = window['dataLayer'] = window['dataLayer'] || [];
+  }
+
+
   render() {
     return (
       <Router>
