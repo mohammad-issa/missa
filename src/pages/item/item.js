@@ -21,8 +21,8 @@ export class Item extends Component {
     }, () => {
       window['dataLayer'].push({
         event: 'analyticsPV',
-        specialPrice: this.state.itemInfo.discount ? `${this.state.itemInfo.discount}%` : 'none',
-        tags: this.state.itemInfo.tags ? this.state.itemInfo.tags.join() : 'none',
+        specialPrice: this.state.itemInfo.discount ? `${this.state.itemInfo.discount}%` : '',
+        tags: this.state.itemInfo.tags ? this.state.itemInfo.tags.join() : '',
       });
     });
   }
