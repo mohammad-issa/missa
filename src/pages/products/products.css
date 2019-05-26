@@ -3,6 +3,18 @@
     margin: 0 auto;
 }
 
+.products-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.products-header img {
+    cursor: pointer;
+    margin-top: 14px;
+    width: 28px;
+}
+
 .products-headline {
     font-weight: 100;
     letter-spacing: 6px;

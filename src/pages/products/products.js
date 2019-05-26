@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Helmet } from "react-helmet";
+
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { itemsData } from '../../assets/itemsData';
 
@@ -24,7 +26,13 @@ export class Products extends Component {
   render() {
     return (
       <div className='products-warpper'>
-        <h1 className='products-headline'>Products</h1>
+        <Helmet>
+          <title>Products</title>
+        </Helmet>
+        <div className='products-header'>
+          <h1 className='products-headline'>Products</h1>
+          <span><img alt='search' className='search-icon' src='http://simpleicon.com/wp-content/uploads/active-search.png' /></span>
+        </div>
         <hr/>
         <div className='products-list'>
           {this.renderCards()}

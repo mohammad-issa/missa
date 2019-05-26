@@ -59,3 +59,25 @@
     cursor: pointer;
     background-size: cover;
 }
+
+.tags-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 -2px;
+}
+
+.tags-list li {
+    background: black;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 2px;
+    padding: 4px 6px;
+}
+
+.tagle-title {
+    font-weight: 100;
+}
+

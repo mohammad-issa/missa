@@ -8,11 +8,6 @@ import { Info } from './pages/info/info'
 import { NotFound } from './pages/404/404'
 
 class App extends Component {
-  componentWillMount() {
-    window['dataLayer'].push({
-      specialPrice: '',
-    });
-  }
   render() {
     return (
       <Router>

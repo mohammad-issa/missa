@@ -13,22 +13,19 @@ export class ProductCard extends Component {
   }
 
   addToCart() {
-    console.log('added to cart');
-    // window['dataLayer'].push({
-    //   event: 'areaClick',
-    //   'event category': 'Template Area Interaction',
-    //   'event action': 'Click',
-    //   'event label': `${this.props.item.name} added to cart`
-    // });
+    window['dataLayer'].push({
+      event: 'itemEvents',
+      'event label': `${this.props.item.name} added to cart`
+    });
   }
 
   shareWithFacebook() {
-    alert(`${this.props.item.name} has shared to facebook.`)
+    alert(`${this.props.item.name} has shared to facebook.`);
   }
 
   renderTags() {
     return this.props.item.tags.map((tag, index) => {
-      return <span key={index}>{tag}</span>
+      return <li key={index}>{tag}</li>
     })
   }
 
@@ -52,7 +49,12 @@ export class ProductCard extends Component {
         </div>
         {this.props.item.discount && <div className='product-label'>{`-${this.props.item.discount}%`}</div>}
         <div onClick={this.shareWithFacebook} className='product-facebook' style={icon}></div>
-        {this.props.standalone && <div className='tags-list'>tags: <div>{this.renderTags()}</div></div>}
+        {this.props.standalone &&
+          <div className='tags-wapper'>
+            <span className='tagle-title'>Tags:</span>
+            <ul className='tags-list'>{this.renderTags()}</ul>
+          </div>
+        }
       </div>
     );
   }
